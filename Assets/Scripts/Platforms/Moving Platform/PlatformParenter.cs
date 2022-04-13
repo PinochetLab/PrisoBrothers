@@ -12,6 +12,7 @@ public class PlatformParenter : MonoBehaviour, IDeactivated
 	[SerializeField] private UnityEvent onTrigger;
 	[SerializeField] private UnityEvent onCollision;
 	[SerializeField] private bool notParent;
+	[SerializeField] private BandPlatform band;
 
 	private List<Transform> childs = new List<Transform>();
 	private List<Transform> parents = new List<Transform>();
@@ -99,6 +100,21 @@ public class PlatformParenter : MonoBehaviour, IDeactivated
 		}
 		parents = new List<Transform>();
 		childs = new List<Transform>();
+	}
+
+	private void FixedUpdate() {
+		if ( band ) {
+			foreach ( Transform child in childs ) {
+				RedHero rh = child.GetComponent<RedHero>();
+				BlueHero bh = child.GetComponent<BlueHero>();
+
+				if (rh && forRed ) {
+					band.SetVelocity(rh.transform.position);
+				}else if (bh && forBlue ) {
+					band.SetVelocity(bh.transform.position);
+				}
+			}
+		}
 	}
 
 	public void Deactivate() {

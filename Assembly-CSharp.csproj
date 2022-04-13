@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Hero\BlueHero.cs" />
     <Compile Include="Assets\Scripts\Hero\HerosOrderController.cs" />
     <Compile Include="Assets\Scripts\Hero\RedHero.cs" />
+    <Compile Include="Assets\Scripts\Platforms\Band Platform\BandPlatform.cs" />
     <Compile Include="Assets\Scripts\Platforms\Blink\Blinker.cs" />
     <Compile Include="Assets\Scripts\Platforms\Blink\IDeactivated.cs" />
     <Compile Include="Assets\Scripts\Platforms\Fading Platform\FadingPlatform.cs" />
@@ -109,16 +110,20 @@
     <Compile Include="Assets\Scripts\Platforms\Trampoline Platform\TrampolineBlockGraphics.cs" />
     <Compile Include="Assets\Scripts\Platforms\Trampoline Platform\TrampolinePlatform.cs" />
     <Compile Include="Assets\Scripts\Platforms\Weightless Zone\WeightlessZone.cs" />
+    <Compile Include="Assets\Scripts\Running Rat\RatSystem.cs" />
     <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
+    <None Include="Assets\Graphics\Band Platform\Line Shader.shader" />
     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
     <None Include="Assets\Graphics\Trampoline Platform\Colors.txt" />
     <None Include="Assets\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
+    <None Include="Assets\Graphics\Band Platform\LineShader2.shader" />
     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\Shaders\SpriteWorld.shader" />
     <None Include="Assets\Graphics\Trampoline Platform Blue\Colors.txt" />
+    <None Include="Assets\Graphics\Band Platform\LineShader3.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programms/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

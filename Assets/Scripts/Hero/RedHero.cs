@@ -53,6 +53,10 @@ public class RedHero : MonoBehaviour
 	private bool fly = false;
 	private FlyZone flyZone;
 
+	private float yTime = 0;
+	private float ySpeed = 0;
+	private bool grounded = true;
+
 	public static RedHero instance;
 
 	private void Awake() {
@@ -136,18 +140,24 @@ public class RedHero : MonoBehaviour
 			SetVerticalVelocity(jumpMinSpeed + inertia.y);
 			jumpPressed = true;
 			jumpPressedTime = 0;
+			yTime = 0;
 		}
 		else if ( Input.GetButtonDown(jumpAxis) && extraJump ) {
 			SetVerticalVelocity(jumpMinSpeed + inertia.y);
 			jumpPressed = true;
 			jumpPressedTime = 0;
 			extraJump = false;
+			yTime = 0;
 		}
 		else if ( Input.GetButtonDown(jumpAxis) ) {
 			/*if ( !ability && abilityAble ) {
 				abilityAble = false;
 				StartCoroutine(UseAbility());
 			}*/
+		}
+
+		if ( !Input.GetButton(jumpAxis) ) {
+			yTime += Time.deltaTime;
 		}
 	}
 
@@ -174,6 +184,18 @@ public class RedHero : MonoBehaviour
 		}
 		else {
 			return Vector2.zero;
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ) {
+			grounded = true;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision) {
+		if ( collision.gameObject.layer == LayerMask.NameToLayer("Ground") ) {
+			grounded = false;
 		}
 	}
 
@@ -215,6 +237,18 @@ public class RedHero : MonoBehaviour
 		}
 	}
 
+	private Vector2 TheoreticalVelocity() {
+		float x = moveSpeed * Input.GetAxisRaw(moveAxis);
+		if (x == 0 ) {
+			x = inertia.x;
+		}
+		float y = ySpeed + Physics2D.gravity.y * yTime;
+		if ( isGrounded ) {
+			y = 0;
+		}
+		return new Vector2(x, y);
+	}
+
 	private void FlyFixedUpdate() {
 		float horSpeed = Input.GetAxisRaw(moveAxis) * moveSpeed;
 		float verSpeed = Input.GetButton(jumpAxis) ? flyVerticalSpeed : 0;
@@ -244,14 +278,30 @@ public class RedHero : MonoBehaviour
 			if ( jumpPressedTime < jumpPressedMaxTime ) {
 				float t = jumpPressedTime / jumpPressedMaxTime;
 				float speed = jumpMinSpeed * (1 - t) + jumpMaxSpeed * t;
+				ySpeed = speed;
 				SetVerticalVelocity(speed + inertia.y);
+				grounded = false;
 			}
 		}
 
 
 		if ( !platform ) {
 			inertiaTime += Time.fixedDeltaTime;
-			inertia = startInertia * Mathf.Exp(-inertiaTime / inertiaTau);
+			Vector2 inputVelocity = new Vector2(Input.GetAxisRaw(moveAxis), Input.GetButton(jumpAxis) ? 1 : -1).normalized;
+			float dot = Vector2.Dot(inertia.normalized, TheoreticalVelocity().normalized);
+			if (dot != 0) print(dot);
+			if (dot >= -1 && dot < 0 ) {
+				dot = 1;
+			}
+			else {
+				dot = Mathf.Pow(1-dot, 10);
+			}
+
+			if ( grounded ) {
+				dot = 1;
+			}
+			
+			inertia -= inertia * Mathf.Exp(-Time.fixedDeltaTime / inertiaTau) * dot;
 		}
 		else {
 			inertia = platform.velocity;
