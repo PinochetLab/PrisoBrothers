@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1468307331666915073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612445, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855470612446, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trampoline Platform With Graphics Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581287855549637212, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cfb713aab7406d34689520bcb567d009,
+        type: 3}
+    - target: {fileID: 1581287855549637218, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8b0e6664d8e775940b8f3be621e0f229, type: 2}
+    - target: {fileID: 1581287856099432773, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c00ec30f641811a49b0fa60117544b34,
+        type: 3}
+    - target: {fileID: 1581287856099432774, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1cd1355bc06c946408a9696697d09b09, type: 2}
+    - target: {fileID: 1581287856385677040, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ef83af128d16fbf4ea6e741ab562e303, type: 2}
+    - target: {fileID: 1581287856385677047, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0727e2f4f171caf4bb0047029dfbc635,
+        type: 3}
+    - target: {fileID: 2316106971690423823, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: forRed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316106971690423823, guid: ed8006cf8d912b4429fef79d679ac8dd,
+        type: 3}
+      propertyPath: forBlue
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed8006cf8d912b4429fef79d679ac8dd, type: 3}
